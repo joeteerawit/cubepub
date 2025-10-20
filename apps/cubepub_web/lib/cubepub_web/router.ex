@@ -41,6 +41,39 @@ defmodule CubepubWeb.Router do
     end
   end
 
+  scope "/api", CubepubWeb do
+    pipe_through :api
+
+    # List all versions of a package
+    # https://github.com/dart-lang/pub/blob/master/doc/repository-spec-v2.md#list-security-advisories-for-a-package
+    get "/packages/:package", PackageController, :list_versions
+
+    # Publishing Packages
+    # https://github.com/dart-lang/pub/blob/master/doc/repository-spec-v2.md#list-security-advisories-for-a-package
+    get "/packages/versions/new", PackageController, :pre_sign_upload
+
+    # List security advisories for a package
+    # https://github.com/dart-lang/pub/blob/master/doc/repository-spec-v2.md#list-security-advisories-for-a-package
+    get "/packages/:package/advisories", PackageController, :list_security_advisories
+
+    # (Deprecated) Inspect a specific version of a package
+    # Deprecated as of Dart 2.8
+    # https://github.com/dart-lang/pub/blob/master/doc/repository-spec-v2.md#deprecated-inspect-a-specific-version-of-a-package
+    get "/packages/:package/versions/:version", PackageController, :show_version
+
+    # Handle uploads - NOTE: Changed to POST method
+    post "/upload", PackageController, :upload
+    get "/finalize", PackageController, :finalize
+  end
+
+  scope "/packages", CubepubWeb do
+    pipe_through :api
+    # (Deprecated) Download a specific version of a package
+    # Deprecated as of Dart 2.8
+    # https://github.com/dart-lang/pub/blob/master/doc/repository-spec-v2.md#deprecated-download-a-specific-version-of-a-package
+    get "/packages/:package/versions/:version", PackageController, :download
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", CubepubWeb do
   #   pipe_through :api
