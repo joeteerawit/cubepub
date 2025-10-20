@@ -14,10 +14,31 @@ defmodule CubepubWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", CubepubWeb do
-    pipe_through :browser
+  # scope "/", CubepubWeb do
+  #   pipe_through :browser
 
-    get "/", PageController, :home
+  #   get "/", PageController, :home
+  # end
+
+  live_session :login_view, on_mount: [] do
+    scope "/", CubepubWeb do
+      pipe_through :browser
+
+      scope "/login", Live do
+        live "/", LoginLive
+      end
+    end
+  end
+
+  live_session :live_view, on_mount: [] do
+    scope "/", CubepubWeb.Live do
+      pipe_through :browser
+
+      live "/", DashBoardLive
+      live "/user", UserLive
+      live "/search", SearchLive
+      live "/security-report", SecurityReportLive
+    end
   end
 
   # Other scopes may use custom stacks.

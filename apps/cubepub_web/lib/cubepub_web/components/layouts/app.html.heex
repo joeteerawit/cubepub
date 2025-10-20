@@ -1,0 +1,123 @@
+<main class="bg-gray-50 text-gray-800">
+  <div class="flex h-screen overflow-hidden">
+    <!-- Sidebar -->
+    <aside class="bg-gray-800 text-white w-64 flex-shrink-0 hidden md:block">
+      <div class="p-4 border-b border-gray-700">
+        <div class="flex items-center space-x-4">
+          <img
+            src={
+              Phoenix.VerifiedRoutes.static_path(
+                @socket,
+                "/images/cubepub_logo.svg"
+              )
+            }
+            alt="Cubepub Packages"
+            class="h-6"
+          />
+
+          <h1 class="text-xl font-bold">
+            <span class="text-amber-500">Cubepub</span> Packages
+          </h1>
+        </div>
+      </div>
+      <nav class="p-4">
+        <div class="mb-6">
+          <p class="text-xs uppercase text-gray-400 font-medium mb-2">Main</p>
+          <ul class="space-y-1">
+            <li>
+              <a
+                href="/"
+                class="flex items-center space-x-3 px-3 py-2 rounded-lg hover:bg-gray-700 transition"
+              >
+                <i class="fas fa-home"></i>
+                <span>Dashboard</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="/search"
+                class="flex items-center space-x-3 px-3 py-2 rounded-lg bg-blue-600 text-white"
+              >
+                <i class="fas fa-search"></i>
+                <span>Search</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="mb-6">
+          <p class="text-xs uppercase text-gray-400 font-medium mb-2">
+            Security
+          </p>
+          <ul class="space-y-1">
+            <li>
+              <a
+                href="/security-report"
+                class="flex items-center space-x-3 px-3 py-2 rounded-lg hover:bg-gray-700 transition"
+              >
+                <i class="fas fa-shield-alt"></i>
+                <span>Overview</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="/security-report"
+                class="flex items-center space-x-3 px-3 py-2 rounded-lg hover:bg-gray-700 transition"
+              >
+                <i class="fas fa-bug"></i>
+                <span>Vulnerability Reports</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="text-xs uppercase text-gray-400 font-medium mb-2">
+            Account
+          </p>
+          <ul class="space-y-1">
+            <li>
+              <a
+                href="/user"
+                class="flex items-center space-x-3 px-3 py-2 rounded-lg hover:bg-gray-700 transition"
+              >
+                <i class="fas fa-user-circle"></i>
+                <span>Profile</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="/user"
+                class="flex items-center space-x-3 px-3 py-2 rounded-lg hover:bg-gray-700 transition"
+              >
+                <i class="fas fa-cog"></i>
+                <span>Settings</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="/login"
+                class="flex items-center space-x-3 px-3 py-2 rounded-lg hover:bg-gray-700 transition"
+              >
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Logout</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </aside>
+    
+<!-- Mobile sidebar toggle -->
+    <div class="md:hidden fixed bottom-4 right-4 z-50">
+      <button
+        id="sidebar-toggle"
+        class="bg-blue-600 text-white p-3 rounded-full shadow-lg"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+    {@inner_content}
+  </div>
+</main>

@@ -50,7 +50,17 @@ defmodule CubepubWeb do
 
   def live_view do
     quote do
-      use Phoenix.LiveView
+      use Phoenix.LiveView,
+        layout: {CubepubWeb.Layouts, :app}
+
+      unquote(html_helpers())
+    end
+  end
+
+  def login_live_view do
+    quote do
+      use Phoenix.LiveView,
+        layout: {CubepubWeb.Layouts, :login}
 
       unquote(html_helpers())
     end
