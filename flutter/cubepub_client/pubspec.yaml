@@ -1,7 +1,8 @@
 name: cubepub_client
-description: "A new Flutter package project."
-version: 0.0.1
-homepage:
+description: "A Flutter client for Cubepub social media platform"
+version: 1.58.0
+homepage: "https://github.com/joewalker/cubepub"
+publish_to: http://localhost:4000
 
 environment:
   sdk: ^3.7.2
@@ -20,7 +21,7 @@ dev_dependencies:
 # following page: https://dart.dev/tools/pub/pubspec
 
 # The following section is specific to Flutter packages.
-flutter:
+# flutter:
 
   # To add assets to your package, add an assets section, like this:
   # assets:
