@@ -43,7 +43,11 @@ defmodule Cubepub.MixProject do
       {:jason, "~> 1.2"},
       {:swoosh, "~> 1.16"},
       {:req, "~> 0.5"},
-      {:yaml_elixir, "~> 2.11"}
+      {:yaml_elixir, "~> 2.11"},
+      {:ash, "~> 3.0"},
+      {:ash_postgres, "~> 2.0"},
+      {:ash_authentication, "~> 4.0"},
+      {:picosat_elixir, "~> 0.2"}
     ]
   end
 

@@ -26,6 +26,8 @@ config :cubepub_web,
   ecto_repos: [Cubepub.Repo],
   generators: [context_app: :cubepub]
 
+config :cubepub, ash_domains: [Cubepub.Accounts]
+
 # Configures the endpoint
 config :cubepub_web, CubepubWeb.Endpoint,
   url: [host: "localhost"],

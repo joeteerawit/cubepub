@@ -45,6 +45,16 @@ if config_env() == :prod do
     ],
     secret_key_base: secret_key_base
 
+  # Configure token signing secret for AshAuthentication
+  token_signing_secret =
+    System.get_env("TOKEN_SIGNING_SECRET") ||
+      raise """
+      environment variable TOKEN_SIGNING_SECRET is missing.
+      You can generate one by calling: mix phx.gen.secret
+      """
+
+  config :cubepub, :token_signing_secret, token_signing_secret
+
   # ## Using releases
   #
   # If you are doing OTP releases, you need to instruct Phoenix

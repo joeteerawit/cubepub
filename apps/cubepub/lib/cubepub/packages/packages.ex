@@ -42,7 +42,8 @@ defmodule Cubepub.Packages do
     now = DateTime.utc_now()
     expires_at = now |> DateTime.add(@expiration_minutes * 60, :second)
     iso_expiry = DateTime.to_iso8601(expires_at)
-    upload_url = Path.join(CubepubWeb.Endpoint.url(), "/api/upload")
+    # The upload URL will be relative, frontend will handle the full URL
+    upload_url = "/api/upload"
 
     policy = %{
       # "key" => key,
