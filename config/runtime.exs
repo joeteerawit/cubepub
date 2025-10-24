@@ -55,6 +55,7 @@ if config_env() == :prod do
 
   config :cubepub, :token_signing_secret, token_signing_secret
 
+  config :tidewave, :root, File.cwd!()
   # ## Using releases
   #
   # If you are doing OTP releases, you need to instruct Phoenix

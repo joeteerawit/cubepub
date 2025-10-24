@@ -48,6 +48,7 @@ defmodule Cubepub.Accounts.User do
       magic_link :magic_link do
         identity_field :email
         token_lifetime {10, :minutes}
+        require_interaction? true
 
         sender fn user, token, _opts ->
           # You'll need to implement email sending here
