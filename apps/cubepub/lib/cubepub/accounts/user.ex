@@ -19,7 +19,7 @@ defmodule Cubepub.Accounts.User do
     end
 
     attribute :hashed_password, :string do
-      allow_nil? false
+      allow_nil? true
       sensitive? true
     end
 
@@ -43,6 +43,29 @@ defmodule Cubepub.Accounts.User do
       password :password do
         identity_field :email
         hashed_password_field :hashed_password
+      end
+
+      magic_link :magic_link do
+        identity_field :email
+        token_lifetime {10, :minutes}
+
+        sender fn user, token, _opts ->
+          # You'll need to implement email sending here
+          # For now, we'll just log the magic link
+          IO.puts("""
+
+          ==============================================
+          Magic Link for #{user.email}:
+
+          http://localhost:4000/auth/magic_link?token=#{token}
+
+          This link will expire in 10 minutes.
+          ==============================================
+
+          """)
+
+          {:ok, user}
+        end
       end
     end
   end
@@ -68,6 +91,10 @@ defmodule Cubepub.Accounts.User do
     end
 
     policy action_type(:create) do
+      authorize_if always()
+    end
+
+    policy action_type(:read) do
       authorize_if always()
     end
 
