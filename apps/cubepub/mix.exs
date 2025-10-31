@@ -47,6 +47,7 @@ defmodule Cubepub.MixProject do
       {:ash, "~> 3.0"},
       {:ash_postgres, "~> 2.0"},
       {:ash_authentication, "~> 4.0"},
+      {:argon2_elixir, "~> 4.0"},
       {:picosat_elixir, "~> 0.2"}
     ]
   end

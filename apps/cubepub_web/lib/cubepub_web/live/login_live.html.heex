@@ -22,7 +22,15 @@
           <p class="text-blue-100">Log in to access your Flutter packages</p>
         </div>
         <div class="p-6">
-          <form>
+          <.form for={@form} phx-change="validate" phx-submit="submit" id="login-form">
+            <%= if @error_message do %>
+              <div class="mb-4 bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-md">
+                <div class="flex items-center">
+                  <i class="fas fa-exclamation-circle mr-2"></i>
+                  <span class="text-sm"><%= @error_message %></span>
+                </div>
+              </div>
+            <% end %>
             <div class="mb-4">
               <label
                 for="username"
@@ -33,8 +41,11 @@
                 <input
                   type="text"
                   id="username"
+                  name={@form[:username].name}
+                  value={@form[:username].value}
                   placeholder="Enter your username"
                   class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  required
                 />
                 <div
                   class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
@@ -57,10 +68,13 @@
               </div>
               <div class="relative">
                 <input
-                  type="password"
+                  type={if @show_password, do: "text", else: "password"}
                   id="password"
+                  name={@form[:password].name}
+                  value={@form[:password].value}
                   placeholder="Enter your password"
                   class="w-full pl-10 pr-10 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  required
                 />
                 <div
                   class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
@@ -70,9 +84,10 @@
                 <div class="absolute inset-y-0 right-0 pr-3 flex items-center">
                   <button
                     type="button"
+                    phx-click="toggle_password"
                     class="text-gray-400 hover:text-gray-600 focus:outline-none"
                   >
-                    <i class="fas fa-eye"></i>
+                    <i class={"fas #{if @show_password, do: "fa-eye-slash", else: "fa-eye"}"}></i>
                   </button>
                 </div>
               </div>
@@ -95,7 +110,7 @@
                 Log In
               </button>
             </div>
-          </form>
+          </.form>
           <div class="mt-6 text-center">
             <p class="text-sm text-gray-600">
               Don't have an account?

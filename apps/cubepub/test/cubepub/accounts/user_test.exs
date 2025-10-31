@@ -5,7 +5,7 @@ defmodule Cubepub.Accounts.UserAuthenticationTest do
 
   describe "password authentication" do
     @valid_attrs %{
-      email: "test@example.com",
+      username: "testuser",
       password: "SecurePassword123!",
       password_confirmation: "SecurePassword123!"
     }
@@ -17,7 +17,7 @@ defmodule Cubepub.Accounts.UserAuthenticationTest do
                  authorize?: false
                )
 
-      assert to_string(user.email) == "test@example.com"
+      assert to_string(user.username) == "testuser"
       assert user.hashed_password != nil
       assert user.hashed_password != "SecurePassword123!"
       assert user.id != nil
@@ -25,7 +25,7 @@ defmodule Cubepub.Accounts.UserAuthenticationTest do
 
     test "fails to register with mismatched password confirmation" do
       attrs = %{
-        email: "test@example.com",
+        username: "testuser",
         password: "SecurePassword123!",
         password_confirmation: "DifferentPassword"
       }
@@ -37,7 +37,7 @@ defmodule Cubepub.Accounts.UserAuthenticationTest do
                )
     end
 
-    test "fails to register with duplicate email" do
+    test "fails to register with duplicate username" do
       # Create first user
       assert {:ok, _user} =
                Ash.create(User, @valid_attrs,
@@ -45,9 +45,15 @@ defmodule Cubepub.Accounts.UserAuthenticationTest do
                  authorize?: false
                )
 
-      # Try to create second user with same email
+      # Try to create second user with same username
+      attrs = %{
+        username: "testuser",
+        password: "SecurePassword123!",
+        password_confirmation: "SecurePassword123!"
+      }
+
       assert {:error, %Ash.Error.Invalid{}} =
-               Ash.create(User, @valid_attrs,
+               Ash.create(User, attrs,
                  action: :register_with_password,
                  authorize?: false
                )
@@ -69,13 +75,13 @@ defmodule Cubepub.Accounts.UserAuthenticationTest do
                  strategy,
                  :sign_in,
                  %{
-                   "email" => "test@example.com",
+                   "username" => "testuser",
                    "password" => "SecurePassword123!"
                  },
                  []
                )
 
-      assert to_string(authenticated_user.email) == "test@example.com"
+      assert to_string(authenticated_user.username) == "testuser"
     end
 
     test "fails to sign in with incorrect password" do
@@ -94,14 +100,14 @@ defmodule Cubepub.Accounts.UserAuthenticationTest do
                  strategy,
                  :sign_in,
                  %{
-                   "email" => "test@example.com",
+                   "username" => "testuser",
                    "password" => "WrongPassword"
                  },
                  []
                )
     end
 
-    test "fails to sign in with non-existent email" do
+    test "fails to sign in with non-existent username" do
       strategy = AshAuthentication.Info.strategy!(User, :password)
 
       assert {:error, _} =
@@ -109,7 +115,7 @@ defmodule Cubepub.Accounts.UserAuthenticationTest do
                  strategy,
                  :sign_in,
                  %{
-                   "email" => "nonexistent@example.com",
+                   "username" => "nonexistentuser",
                    "password" => "SomePassword"
                  },
                  []
@@ -123,9 +129,9 @@ defmodule Cubepub.Accounts.UserAuthenticationTest do
                  authorize?: false
                )
 
-      # Verify password is hashed
+      # Verify password is hashed with Argon2
       assert user.hashed_password != @valid_attrs.password
-      assert String.starts_with?(user.hashed_password, "$2b$")
+      assert String.starts_with?(user.hashed_password, "$argon2id$")
     end
   end
 end

@@ -1,8 +1,8 @@
 defmodule CubepubWeb.PageControllerTest do
   use CubepubWeb.ConnCase
 
-  test "GET /", %{conn: conn} do
+  test "GET / redirects to login when not authenticated", %{conn: conn} do
     conn = get(conn, ~p"/")
-    assert html_response(conn, 200) =~ "Upload New Package"
+    assert redirected_to(conn) == ~p"/login"
   end
 end

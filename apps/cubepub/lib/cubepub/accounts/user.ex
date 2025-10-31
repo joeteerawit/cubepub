@@ -13,13 +13,13 @@ defmodule Cubepub.Accounts.User do
   attributes do
     uuid_primary_key :id
 
-    attribute :email, :ci_string do
+    attribute :username, :ci_string do
       allow_nil? false
       public? true
     end
 
     attribute :hashed_password, :string do
-      allow_nil? true
+      allow_nil? false
       sensitive? true
     end
 
@@ -41,42 +41,38 @@ defmodule Cubepub.Accounts.User do
 
     strategies do
       password :password do
-        identity_field :email
+        identity_field :username
         hashed_password_field :hashed_password
-      end
-
-      magic_link :magic_link do
-        identity_field :email
-        token_lifetime {10, :minutes}
-        require_interaction? true
-
-        sender fn user, token, _opts ->
-          # You'll need to implement email sending here
-          # For now, we'll just log the magic link
-          IO.puts("""
-
-          ==============================================
-          Magic Link for #{user.email}:
-
-          http://localhost:4000/auth/magic_link?token=#{token}
-
-          This link will expire in 10 minutes.
-          ==============================================
-
-          """)
-
-          {:ok, user}
-        end
+        hash_provider AshAuthentication.Argon2Provider
       end
     end
   end
 
   identities do
-    identity :unique_email, [:email]
+    identity :unique_username, [:username]
   end
 
   actions do
     defaults [:read, :destroy]
+
+    create :register_with_password do
+      description "Register a new user with username and password"
+      accept [:username]
+      argument :password, :string, allow_nil?: false, sensitive?: true
+      argument :password_confirmation, :string, allow_nil?: false, sensitive?: true
+
+      validate AshAuthentication.Strategy.Password.PasswordConfirmationValidation
+      change AshAuthentication.GenerateTokenChange
+      change AshAuthentication.Strategy.Password.HashPasswordChange
+    end
+
+    read :sign_in_with_password do
+      description "Sign in with username and password"
+      argument :username, :ci_string, allow_nil?: false
+      argument :password, :string, allow_nil?: false, sensitive?: true
+
+      prepare AshAuthentication.Strategy.Password.SignInPreparation
+    end
 
     read :get_by_subject do
       description "Get a user by the subject claim in a JWT"

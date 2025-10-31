@@ -20,7 +20,7 @@ defmodule CubepubWeb.Router do
   #   get "/", PageController, :home
   # end
 
-  live_session :login_view, on_mount: [] do
+  live_session :login_view, on_mount: [{CubepubWeb.Live.AuthHooks, :redirect_if_authenticated}] do
     scope "/", CubepubWeb do
       pipe_through :browser
 
@@ -30,7 +30,14 @@ defmodule CubepubWeb.Router do
     end
   end
 
-  live_session :live_view, on_mount: [] do
+  scope "/", CubepubWeb do
+    pipe_through :browser
+
+    get "/auth/login", AuthController, :login
+    delete "/logout", AuthController, :logout
+  end
+
+  live_session :live_view, on_mount: [{CubepubWeb.Live.AuthHooks, :require_authenticated_user}] do
     scope "/", CubepubWeb.Live do
       pipe_through :browser
 
