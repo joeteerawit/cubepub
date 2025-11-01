@@ -3,6 +3,10 @@ defmodule CubepubWeb.Live.ProjectDashboardLive do
 
   @impl true
   def mount(_params, _session, socket) do
-    {:ok, socket}
+    new_socket =
+      socket
+      |> assign(current_path: "/")
+
+    {:ok, new_socket}
   end
 end

@@ -4,6 +4,7 @@ defmodule CubepubWeb.Layouts do
   used by your application.
   """
   use CubepubWeb, :html
+  import CubepubWeb.Components.Sidebar
 
   # Embed all files in layouts/* within this module.
   # The default root.html.heex file contains the HTML
