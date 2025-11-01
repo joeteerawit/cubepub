@@ -1,4 +1,4 @@
-defmodule CubepubWeb.Live.DashBoardLive do
+defmodule CubepubWeb.Live.ProjectDashboardLive do
   use CubepubWeb, :live_view
 
   @impl true

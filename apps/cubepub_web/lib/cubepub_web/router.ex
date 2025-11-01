@@ -41,7 +41,7 @@ defmodule CubepubWeb.Router do
     scope "/", CubepubWeb.Live do
       pipe_through :browser
 
-      live "/", DashBoardLive
+      live "/", ProjectDashboardLive
       live "/user", UserLive
       live "/search", SearchLive
       live "/security-report", SecurityReportLive
