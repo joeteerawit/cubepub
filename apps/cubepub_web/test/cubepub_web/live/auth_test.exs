@@ -19,7 +19,9 @@ defmodule CubepubWeb.Live.AuthTest do
   end
 
   describe "authentication guards" do
-    test "redirects to login when accessing protected routes without authentication", %{conn: conn} do
+    test "redirects to login when accessing protected routes without authentication", %{
+      conn: conn
+    } do
       # Try to access dashboard without being logged in
       {:error, {:redirect, %{to: "/login"}}} = live(conn, ~p"/")
 
@@ -76,7 +78,10 @@ defmodule CubepubWeb.Live.AuthTest do
       assert redirected_to(conn) == ~p"/login"
     end
 
-    test "login flow stores token in session and redirects to dashboard", %{conn: conn, user: user} do
+    test "login flow stores token in session and redirects to dashboard", %{
+      conn: conn,
+      user: user
+    } do
       {:ok, view, _html} = live(conn, ~p"/login")
 
       # Submit login form - should redirect with token

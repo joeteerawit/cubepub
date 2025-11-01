@@ -18,9 +18,7 @@
             placeholder="Search security reports..."
             class="w-full py-2 pl-10 pr-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
           />
-          <div
-            class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
-          >
+          <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
             <i class="fas fa-search text-gray-400"></i>
           </div>
         </div>
@@ -29,9 +27,7 @@
       <div class="flex items-center space-x-4">
         <div class="relative">
           <button class="flex items-center space-x-2">
-            <div
-              class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white"
-            >
+            <div class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white">
               <span class="text-sm font-medium">JD</span>
             </div>
             <span class="hidden md:inline-block text-sm font-medium">
@@ -43,22 +39,19 @@
       </div>
     </div>
   </header>
-
-  <!-- Content area -->
+  
+<!-- Content area -->
   <main class="flex-1 overflow-y-auto p-6">
     <div class="mb-6">
       <div class="flex justify-between items-center">
         <h2 class="text-2xl font-bold">Security Vulnerability Reports</h2>
-        <button
-          class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition"
-        >
-          <i class="fas fa-plus mr-2"></i>
-          Report New Vulnerability
+        <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition">
+          <i class="fas fa-plus mr-2"></i> Report New Vulnerability
         </button>
       </div>
     </div>
-
-    <!-- Security Stats -->
+    
+<!-- Security Stats -->
     <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
       <div class="bg-white p-4 rounded-lg shadow-md">
         <div class="flex items-center justify-between">
@@ -99,40 +92,28 @@
         <p class="text-sm text-gray-500 mt-1">Fixed and verified</p>
       </div>
     </div>
-
-    <!-- Filters -->
+    
+<!-- Filters -->
     <div class="bg-white p-4 rounded-lg shadow-md mb-6">
-      <div
-        class="flex flex-col md:flex-row md:items-center md:justify-between space-y-4 md:space-y-0"
-      >
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between space-y-4 md:space-y-0">
         <div class="flex flex-wrap gap-2">
-          <button
-            class="bg-blue-600 text-white px-3 py-1.5 rounded-lg text-sm font-medium"
-          >
+          <button class="bg-blue-600 text-white px-3 py-1.5 rounded-lg text-sm font-medium">
             All Reports
           </button>
-          <button
-            class="bg-white hover:bg-gray-100 text-gray-800 border border-gray-300 px-3 py-1.5 rounded-lg text-sm font-medium"
-          >
+          <button class="bg-white hover:bg-gray-100 text-gray-800 border border-gray-300 px-3 py-1.5 rounded-lg text-sm font-medium">
             Critical
           </button>
-          <button
-            class="bg-white hover:bg-gray-100 text-gray-800 border border-gray-300 px-3 py-1.5 rounded-lg text-sm font-medium"
-          >
+          <button class="bg-white hover:bg-gray-100 text-gray-800 border border-gray-300 px-3 py-1.5 rounded-lg text-sm font-medium">
             Open
           </button>
-          <button
-            class="bg-white hover:bg-gray-100 text-gray-800 border border-gray-300 px-3 py-1.5 rounded-lg text-sm font-medium"
-          >
+          <button class="bg-white hover:bg-gray-100 text-gray-800 border border-gray-300 px-3 py-1.5 rounded-lg text-sm font-medium">
             Resolved
           </button>
         </div>
 
         <div class="flex items-center space-x-2">
           <span class="text-sm text-gray-500">Sort by:</span>
-          <select
-            class="bg-white border border-gray-300 text-gray-700 py-1.5 px-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm"
-          >
+          <select class="bg-white border border-gray-300 text-gray-700 py-1.5 px-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm">
             <option>Newest</option>
             <option>Severity</option>
             <option>Status</option>
@@ -141,8 +122,8 @@
         </div>
       </div>
     </div>
-
-    <!-- Reports Table -->
+    
+<!-- Reports Table -->
     <div class="bg-white rounded-lg shadow-md overflow-hidden mb-6">
       <div class="overflow-x-auto">
         <table class="min-w-full divide-y divide-gray-200">
@@ -208,25 +189,19 @@
                 </div>
               </td>
               <td class="px-6 py-4 whitespace-nowrap">
-                <span
-                  class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800"
-                >
+                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">
                   Critical
                 </span>
               </td>
               <td class="px-6 py-4 whitespace-nowrap">
-                <span
-                  class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800"
-                >
+                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">
                   Open
                 </span>
               </td>
               <td class="px-6 py-4 whitespace-nowrap">
                 <div class="text-sm text-gray-500">May 2, 2025</div>
               </td>
-              <td
-                class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium"
-              >
+              <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                 <a href="#" class="text-blue-600 hover:text-blue-900">View</a>
               </td>
             </tr>
@@ -243,25 +218,19 @@
                 </div>
               </td>
               <td class="px-6 py-4 whitespace-nowrap">
-                <span
-                  class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800"
-                >
+                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">
                   Critical
                 </span>
               </td>
               <td class="px-6 py-4 whitespace-nowrap">
-                <span
-                  class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800"
-                >
+                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
                   Resolved
                 </span>
               </td>
               <td class="px-6 py-4 whitespace-nowrap">
                 <div class="text-sm text-gray-500">Apr 28, 2025</div>
               </td>
-              <td
-                class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium"
-              >
+              <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                 <a href="#" class="text-blue-600 hover:text-blue-900">View</a>
               </td>
             </tr>
@@ -280,25 +249,19 @@
                 </div>
               </td>
               <td class="px-6 py-4 whitespace-nowrap">
-                <span
-                  class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-orange-100 text-orange-800"
-                >
+                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-orange-100 text-orange-800">
                   High
                 </span>
               </td>
               <td class="px-6 py-4 whitespace-nowrap">
-                <span
-                  class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800"
-                >
+                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">
                   Open
                 </span>
               </td>
               <td class="px-6 py-4 whitespace-nowrap">
                 <div class="text-sm text-gray-500">Apr 25, 2025</div>
               </td>
-              <td
-                class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium"
-              >
+              <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                 <a href="#" class="text-blue-600 hover:text-blue-900">View</a>
               </td>
             </tr>
@@ -317,25 +280,19 @@
                 </div>
               </td>
               <td class="px-6 py-4 whitespace-nowrap">
-                <span
-                  class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800"
-                >
+                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">
                   Medium
                 </span>
               </td>
               <td class="px-6 py-4 whitespace-nowrap">
-                <span
-                  class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800"
-                >
+                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
                   Resolved
                 </span>
               </td>
               <td class="px-6 py-4 whitespace-nowrap">
                 <div class="text-sm text-gray-500">Apr 20, 2025</div>
               </td>
-              <td
-                class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium"
-              >
+              <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                 <a href="#" class="text-blue-600 hover:text-blue-900">View</a>
               </td>
             </tr>
@@ -354,25 +311,19 @@
                 </div>
               </td>
               <td class="px-6 py-4 whitespace-nowrap">
-                <span
-                  class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800"
-                >
+                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800">
                   Low
                 </span>
               </td>
               <td class="px-6 py-4 whitespace-nowrap">
-                <span
-                  class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800"
-                >
+                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
                   Resolved
                 </span>
               </td>
               <td class="px-6 py-4 whitespace-nowrap">
                 <div class="text-sm text-gray-500">Apr 15, 2025</div>
               </td>
-              <td
-                class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium"
-              >
+              <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                 <a href="#" class="text-blue-600 hover:text-blue-900">View</a>
               </td>
             </tr>
@@ -380,8 +331,8 @@
         </table>
       </div>
     </div>
-
-    <!-- Recent Activity -->
+    
+<!-- Recent Activity -->
     <div class="mb-6">
       <h3 class="text-xl font-bold mb-4">Recent Activity</h3>
       <div class="bg-white rounded-lg shadow-md overflow-hidden">
@@ -426,8 +377,7 @@
               </div>
               <div>
                 <p class="text-sm font-medium">
-                  New critical vulnerability reported
-                  <span class="text-blue-600">#VUL-321</span>
+                  New critical vulnerability reported <span class="text-blue-600">#VUL-321</span>
                 </p>
                 <p class="text-xs text-gray-500">Yesterday by Robert Johnson</p>
               </div>
@@ -436,44 +386,35 @@
         </ul>
       </div>
     </div>
-
-    <!-- Pagination -->
+    
+<!-- Pagination -->
     <div class="flex items-center justify-between">
       <div class="text-sm text-gray-500">
-        Showing <span class="font-medium">1-5</span> of
-        <span class="font-medium">42</span> reports
+        Showing <span class="font-medium">1-5</span>
+        of <span class="font-medium">42</span>
+        reports
       </div>
       <div class="flex items-center space-x-1">
-        <button
-          class="px-3 py-1 rounded-md bg-white border border-gray-300 text-gray-500 hover:bg-gray-50"
-        >
+        <button class="px-3 py-1 rounded-md bg-white border border-gray-300 text-gray-500 hover:bg-gray-50">
           <i class="fas fa-chevron-left"></i>
         </button>
         <button class="px-3 py-1 rounded-md bg-blue-600 text-white">1</button>
-        <button
-          class="px-3 py-1 rounded-md bg-white border border-gray-300 text-gray-500 hover:bg-gray-50"
-        >
+        <button class="px-3 py-1 rounded-md bg-white border border-gray-300 text-gray-500 hover:bg-gray-50">
           2
         </button>
-        <button
-          class="px-3 py-1 rounded-md bg-white border border-gray-300 text-gray-500 hover:bg-gray-50"
-        >
+        <button class="px-3 py-1 rounded-md bg-white border border-gray-300 text-gray-500 hover:bg-gray-50">
           3
         </button>
-        <button
-          class="px-3 py-1 rounded-md bg-white border border-gray-300 text-gray-500 hover:bg-gray-50"
-        >
+        <button class="px-3 py-1 rounded-md bg-white border border-gray-300 text-gray-500 hover:bg-gray-50">
           <i class="fas fa-chevron-right"></i>
         </button>
       </div>
     </div>
   </main>
-
-  <!-- Footer -->
+  
+<!-- Footer -->
   <footer class="bg-white border-t border-gray-200 p-4 mt-auto">
-    <div
-      class="flex flex-col md:flex-row md:justify-between md:items-center text-sm text-gray-500"
-    >
+    <div class="flex flex-col md:flex-row md:justify-between md:items-center text-sm text-gray-500">
       <div class="mb-2 md:mb-0">
         © 2025 FlutterPackage. All rights reserved.
       </div>

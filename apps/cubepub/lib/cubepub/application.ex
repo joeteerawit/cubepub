@@ -11,7 +11,7 @@ defmodule Cubepub.Application do
       Cubepub.Repo,
       {DNSCluster, query: Application.get_env(:cubepub, :dns_cluster_query) || :ignore},
       {Phoenix.PubSub, name: Cubepub.PubSub},
-      {AshAuthentication.Supervisor, otp_app: :cubepub},
+      {AshAuthentication.Supervisor, otp_app: :cubepub}
       # Start a worker by calling: Cubepub.Worker.start_link(arg)
       # {Cubepub.Worker, arg}
     ]

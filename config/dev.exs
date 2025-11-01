@@ -11,7 +11,9 @@ config :cubepub, Cubepub.Repo,
   pool_size: 10
 
 # Configure token signing secret for AshAuthentication
-config :cubepub, :token_signing_secret, "XVOHtntoyzDH6ZshTWJXEt055R8dHrLzNnXgca4b6vYUqYS8yflpkAXkvHgk8zSq"
+config :cubepub,
+       :token_signing_secret,
+       "XVOHtntoyzDH6ZshTWJXEt055R8dHrLzNnXgca4b6vYUqYS8yflpkAXkvHgk8zSq"
 
 # For development, we disable any cache and enable
 # debugging and code reloading.

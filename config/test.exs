@@ -14,7 +14,9 @@ config :cubepub, Cubepub.Repo,
   pool_size: System.schedulers_online() * 2
 
 # Configure token signing secret for AshAuthentication
-config :cubepub, :token_signing_secret, "PbYvd6w0VynueRKq2En/e+GLtYEhdIc1p7jK0S9FAKZjIBLi4P9GOIF9DN6fF1zh"
+config :cubepub,
+       :token_signing_secret,
+       "PbYvd6w0VynueRKq2En/e+GLtYEhdIc1p7jK0S9FAKZjIBLi4P9GOIF9DN6fF1zh"
 
 # We don't run a server during test. If one is required,
 # you can enable the server option below.
