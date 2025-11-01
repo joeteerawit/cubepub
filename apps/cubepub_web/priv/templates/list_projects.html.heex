@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects - CubePub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .card-animate {
+        animation: fadeIn 0.3s ease-out;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <div class="flex min-h-screen">
+      <!-- Sidebar -->
+      <aside class="w-52 bg-white border-r border-gray-200 flex-shrink-0">
+        <!-- Logo in Sidebar -->
+        <div class="p-4 border-b border-gray-200">
+          <div class="flex items-center space-x-2">
+            <svg
+              class="w-7 h-7 text-cyan-500"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path
+                d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"
+              />
+            </svg>
+            <span class="text-lg font-bold text-gray-900">CubePub</span>
+            <span
+              class="px-2 py-0.5 text-xs font-semibold text-white bg-purple-500 rounded"
+              >BETA</span
+            >
+          </div>
+        </div>
+
+        <nav class="p-4 space-y-1">
+          <div
+            class="px-3 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider"
+          >
+            Navigation
+          </div>
+
+          <a
+            href="#"
+            class="flex items-center space-x-3 px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 rounded-lg transition group"
+          >
+            <svg
+              class="w-5 h-5 text-gray-400 group-hover:text-cyan-500"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+              ></path>
+            </svg>
+            <span>Dashboard</span>
+            <span
+              class="ml-auto px-2 py-0.5 text-xs font-semibold text-cyan-700 bg-cyan-100 rounded"
+              >2</span
+            >
+          </a>
+
+          <a
+            href="#"
+            class="flex items-center space-x-3 px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 rounded-lg transition"
+          >
+            <svg
+              class="w-5 h-5 text-gray-400"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"
+              ></path>
+            </svg>
+            <span>Layouts</span>
+          </a>
+
+          <div
+            class="px-3 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider mt-6"
+          >
+            Workspace
+          </div>
+
+          <a
+            href="#"
+            class="flex items-center space-x-3 px-3 py-2 text-sm font-medium text-cyan-700 bg-cyan-50 rounded-lg transition"
+          >
+            <svg
+              class="w-5 h-5 text-cyan-600"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"
+              ></path>
+            </svg>
+            <span>Projects</span>
+          </a>
+
+          <a
+            href="#"
+            class="flex items-center space-x-3 px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 rounded-lg transition"
+          >
+            <svg
+              class="w-5 h-5 text-gray-400"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+              ></path>
+            </svg>
+            <span>Packages</span>
+          </a>
+
+          <a
+            href="#"
+            class="flex items-center space-x-3 px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 rounded-lg transition"
+          >
+            <svg
+              class="w-5 h-5 text-gray-400"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+              ></path>
+            </svg>
+            <span>Statistics</span>
+          </a>
+
+          <a
+            href="#"
+            class="flex items-center space-x-3 px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 rounded-lg transition"
+          >
+            <svg
+              class="w-5 h-5 text-gray-400"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+              ></path>
+            </svg>
+            <span>Team</span>
+          </a>
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="flex-1 flex flex-col overflow-x-hidden">
+        <!-- Top Bar with Search and Icons -->
+        <header
+          class="bg-gray-50 px-6 py-3 flex items-center justify-between sticky top-0 z-40"
+        >
+          <!-- Search Bar -->
+          <div class="flex-1 max-w-xl">
+            <div class="relative">
+              <input
+                type="text"
+                placeholder="Search projects..."
+                class="w-full px-4 py-2 pl-10 pr-20 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
+              />
+              <svg
+                class="absolute left-3 top-2.5 w-5 h-5 text-gray-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                ></path>
+              </svg>
+              <kbd
+                class="absolute right-3 top-2 px-2 py-0.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded"
+                >ctrl+k</kbd
+              >
+            </div>
+          </div>
+
+          <!-- Header Icons -->
+          <div class="flex items-center space-x-2 ml-6">
+            <button
+              class="p-2 text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded-lg transition"
+            >
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+            </button>
+            <button
+              class="p-2 text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded-lg transition"
+            >
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                ></path>
+              </svg>
+            </button>
+            <button
+              class="p-2 text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded-lg transition"
+            >
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+                ></path>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                ></path>
+              </svg>
+            </button>
+            <button
+              class="relative p-2 text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded-lg transition"
+            >
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
+                ></path>
+              </svg>
+              <span
+                class="absolute top-1 right-1 w-2 h-2 bg-cyan-500 rounded-full"
+              ></span>
+            </button>
+            <div
+              class="w-9 h-9 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center text-white text-sm font-semibold cursor-pointer hover:shadow-lg transition"
+            >
+              JS
+            </div>
+          </div>
+        </header>
+
+        <!-- Content Area -->
+        <div class="flex-1 bg-gray-50">
+          <!-- Breadcrumb and Title -->
+          <div class="bg-gray-50 px-8 py-5">
+            <nav class="flex items-center space-x-2 text-sm text-gray-500 mb-2">
+              <a href="#" class="hover:text-gray-700">Home</a>
+              <svg
+                class="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7 7"
+                ></path>
+              </svg>
+              <a href="#" class="hover:text-gray-700">Workspace</a>
+              <svg
+                class="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7 7"
+                ></path>
+              </svg>
+              <span class="font-medium text-gray-900">Projects</span>
+            </nav>
+            <div class="flex items-center justify-between">
+              <div>
+                <h1 class="text-3xl font-bold text-gray-900">My Projects</h1>
+                <p class="text-sm text-gray-600 mt-1">
+                  6 different card design styles to choose from
+                </p>
+              </div>
+              <button
+                class="px-4 py-2 bg-cyan-600 hover:bg-cyan-700 text-white rounded-lg font-medium text-sm flex items-center space-x-2 transition shadow-sm hover:shadow-md"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 4v16m8-8H4"
+                  ></path>
+                </svg>
+                <span>New Project</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Project Grid -->
+          <div class="p-8">
+            <div
+              class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-6"
+            >
+              <!-- Design 1: Minimal Clean with Icon Badge -->
+              <div
+                class="bg-white rounded-2xl shadow-sm hover:shadow-lg border border-gray-200 transition-all duration-300 card-animate overflow-hidden group cursor-pointer"
+              >
+                <div class="p-6 pb-4">
+                  <div class="flex items-start justify-between mb-4">
+                    <div
+                      class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center group-hover:bg-blue-100 transition"
+                    >
+                      <svg
+                        class="w-7 h-7 text-blue-600"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span
+                        class="px-2.5 py-1 text-xs font-semibold text-green-700 bg-green-50 rounded-lg border border-green-200"
+                        >Active</span
+                      >
+                      <button
+                        class="p-1.5 hover:bg-gray-100 rounded-lg transition"
+                      >
+                        <svg
+                          class="w-4 h-4 text-gray-500"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"
+                          ></path>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                  <h3
+                    class="text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition"
+                  >
+                    E-Commerce App
+                  </h3>
+                  <p
+                    class="text-sm text-gray-600 mb-4 line-clamp-2 leading-relaxed"
+                  >
+                    A modern e-commerce mobile application built with Flutter.
+                    Features product catalog, cart, and payment integration.
+                  </p>
+                  <div class="flex items-center gap-4 mb-4">
+                    <div class="flex items-center gap-1.5 text-gray-600">
+                      <svg
+                        class="w-4 h-4 text-yellow-500"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                        ></path>
+                      </svg>
+                      <span class="text-sm font-semibold">12</span>
+                    </div>
+                    <div class="flex items-center gap-1.5 text-gray-600">
+                      <svg
+                        class="w-4 h-4"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"
+                        ></path>
+                      </svg>
+                      <span class="text-sm font-semibold">3</span>
+                    </div>
+                    <div class="ml-auto">
+                      <span
+                        class="text-xs font-medium text-blue-600 bg-blue-50 px-2 py-1 rounded"
+                        >Flutter</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="px-6 py-4 bg-gray-50 border-t border-gray-100">
+                  <div class="flex items-center justify-between">
+                    <div class="flex -space-x-2">
+                      <div
+                        class="w-7 h-7 rounded-full border-2 border-white bg-purple-500 flex items-center justify-center text-white text-xs font-bold"
+                      >
+                        JS
+                      </div>
+                      <div
+                        class="w-7 h-7 rounded-full border-2 border-white bg-green-500 flex items-center justify-center text-white text-xs font-bold"
+                      >
+                        AM
+                      </div>
+                      <div
+                        class="w-7 h-7 rounded-full border-2 border-white bg-orange-500 flex items-center justify-center text-white text-xs font-bold"
+                      >
+                        SK
+                      </div>
+                      <div
+                        class="w-7 h-7 rounded-full border-2 border-white bg-gray-200 flex items-center justify-center text-xs font-semibold text-gray-600"
+                      >
+                        +2
+                      </div>
+                    </div>
+                    <span class="text-xs text-gray-500 font-medium"
+                      >2h ago</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Design 2: Border Accent with Progress Bar -->
+              <div
+                class="bg-white rounded-2xl shadow-sm hover:shadow-lg border-2 border-purple-200 hover:border-purple-400 transition-all duration-300 card-animate overflow-hidden group cursor-pointer"
+              >
+                <div class="p-6">
+                  <div class="flex items-center justify-between mb-5">
+                    <div class="flex items-center gap-3">
+                      <div
+                        class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center"
+                      >
+                        <svg
+                          class="w-6 h-6 text-purple-600"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"
+                          ></path>
+                        </svg>
+                      </div>
+                      <div>
+                        <h3
+                          class="text-lg font-bold text-gray-900 group-hover:text-purple-600 transition"
+                        >
+                          Task Manager Pro
+                        </h3>
+                        <span
+                          class="inline-block mt-0.5 px-2 py-0.5 text-xs font-semibold text-yellow-700 bg-yellow-50 rounded border border-yellow-200"
+                          >In Progress</span
+                        >
+                      </div>
+                    </div>
+                    <button class="p-2 hover:bg-gray-100 rounded-lg transition">
+                      <svg
+                        class="w-5 h-5 text-gray-400"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"
+                        ></path>
+                      </svg>
+                    </button>
+                  </div>
+                  <p class="text-sm text-gray-600 mb-5 leading-relaxed">
+                    Advanced task management system with real-time
+                    collaboration, notifications, and analytics dashboard.
+                  </p>
+                  <div class="mb-5">
+                    <div class="flex items-center justify-between mb-2">
+                      <span class="text-xs font-semibold text-gray-700"
+                        >Progress</span
+                      >
+                      <span class="text-xs font-semibold text-purple-600"
+                        >68%</span
+                      >
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                      <div
+                        class="bg-purple-600 h-2 rounded-full"
+                        style="width: 68%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex items-center justify-between pt-4 border-t border-gray-100"
+                  >
+                    <div class="flex items-center gap-3">
+                      <div class="flex items-center gap-1">
+                        <svg
+                          class="w-4 h-4 text-yellow-500"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                          ></path>
+                        </svg>
+                        <span class="text-sm font-bold text-gray-700">8</span>
+                      </div>
+                      <div class="flex -space-x-1.5">
+                        <div
+                          class="w-6 h-6 rounded-full border-2 border-white bg-blue-500 flex items-center justify-center text-white text-[10px] font-bold"
+                        >
+                          TC
+                        </div>
+                        <div
+                          class="w-6 h-6 rounded-full border-2 border-white bg-orange-500 flex items-center justify-center text-white text-[10px] font-bold"
+                        >
+                          LM
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span
+                        class="text-xs font-medium text-purple-600 bg-purple-50 px-2 py-1 rounded"
+                        >React</span
+                      >
+                      <span class="text-xs text-gray-500">5h ago</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Design 3: Left Accent Bar with Tags -->
+              <div
+                class="bg-white rounded-2xl shadow-sm hover:shadow-lg border border-gray-200 transition-all duration-300 card-animate overflow-hidden group cursor-pointer relative"
+              >
+                <div
+                  class="absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b from-green-400 to-emerald-600 group-hover:w-2 transition-all"
+                ></div>
+                <div class="p-6 pl-7">
+                  <div class="flex items-start justify-between mb-4">
+                    <div class="flex-1">
+                      <div class="flex items-center gap-2 mb-2">
+                        <h3
+                          class="text-lg font-bold text-gray-900 group-hover:text-green-600 transition"
+                        >
+                          Fitness Tracker
+                        </h3>
+                        <span
+                          class="px-2 py-0.5 text-xs font-bold text-green-700 bg-green-100 rounded"
+                          >ACTIVE</span
+                        >
+                      </div>
+                      <p
+                        class="text-sm text-gray-600 leading-relaxed line-clamp-2"
+                      >
+                        Health and fitness tracking app with workout plans,
+                        nutrition logging, and progress visualization.
+                      </p>
+                    </div>
+                    <button
+                      class="p-2 hover:bg-gray-100 rounded-lg transition ml-2"
+                    >
+                      <svg
+                        class="w-5 h-5 text-gray-400"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"
+                        ></path>
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="flex flex-wrap gap-2 mb-4">
+                    <span
+                      class="px-2 py-1 text-xs font-medium text-gray-700 bg-gray-100 rounded"
+                      >Fitness</span
+                    >
+                    <span
+                      class="px-2 py-1 text-xs font-medium text-gray-700 bg-gray-100 rounded"
+                      >Healthcare</span
+                    >
+                    <span
+                      class="px-2 py-1 text-xs font-medium text-gray-700 bg-gray-100 rounded"
+                      >Mobile</span
+                    >
+                  </div>
+                  <div
+                    class="flex items-center justify-between pt-4 border-t border-gray-100"
+                  >
+                    <div class="flex items-center gap-4">
+                      <div class="flex items-center gap-1.5">
+                        <svg
+                          class="w-4 h-4 text-yellow-500"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                          ></path>
+                        </svg>
+                        <span class="text-sm font-bold">15</span>
+                      </div>
+                      <div class="flex -space-x-2">
+                        <div
+                          class="w-7 h-7 rounded-full border-2 border-white bg-red-500 flex items-center justify-center text-white text-xs font-bold"
+                        >
+                          MK
+                        </div>
+                        <div
+                          class="w-7 h-7 rounded-full border-2 border-white bg-indigo-500 flex items-center justify-center text-white text-xs font-bold"
+                        >
+                          DP
+                        </div>
+                        <div
+                          class="w-7 h-7 rounded-full border-2 border-white bg-teal-500 flex items-center justify-center text-white text-xs font-bold"
+                        >
+                          RF
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                      <span class="text-xs text-gray-600 font-medium"
+                        >Vue.js</span
+                      >
+                      <span class="text-xs text-gray-400">•</span>
+                      <span class="text-xs text-gray-500">1d ago</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Design 4: Compact with Metrics Grid -->
+              <div
+                class="bg-white rounded-2xl shadow-sm hover:shadow-lg border border-gray-200 transition-all duration-300 card-animate overflow-hidden group cursor-pointer"
+              >
+                <div class="p-5">
+                  <div class="flex items-center gap-3 mb-4">
+                    <div
+                      class="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center shadow-sm"
+                    >
+                      <svg
+                        class="w-5 h-5 text-white"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                        ></path>
+                      </svg>
+                    </div>
+                    <div class="flex-1">
+                      <h3
+                        class="text-base font-bold text-gray-900 group-hover:text-orange-600 transition"
+                      >
+                        Recipe Finder
+                      </h3>
+                      <span class="text-xs text-gray-500 font-medium"
+                        >Updated 3 days ago</span
+                      >
+                    </div>
+                    <span
+                      class="px-2.5 py-1 text-xs font-bold text-blue-700 bg-blue-50 rounded-lg"
+                      >PLAN</span
+                    >
+                  </div>
+                  <p
+                    class="text-sm text-gray-600 mb-4 leading-relaxed line-clamp-2"
+                  >
+                    Discover recipes based on ingredients you have. Features
+                    meal planning and grocery list generation.
+                  </p>
+                  <div class="grid grid-cols-3 gap-3 mb-4">
+                    <div class="text-center p-2 bg-gray-50 rounded-lg">
+                      <div class="text-lg font-bold text-gray-900">5</div>
+                      <div class="text-xs text-gray-500">Stars</div>
+                    </div>
+                    <div class="text-center p-2 bg-gray-50 rounded-lg">
+                      <div class="text-lg font-bold text-gray-900">2</div>
+                      <div class="text-xs text-gray-500">Forks</div>
+                    </div>
+                    <div class="text-center p-2 bg-gray-50 rounded-lg">
+                      <div class="text-lg font-bold text-gray-900">1</div>
+                      <div class="text-xs text-gray-500">Team</div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex items-center justify-between pt-3 border-t border-gray-100"
+                  >
+                    <div class="flex items-center gap-2">
+                      <div
+                        class="w-7 h-7 rounded-full bg-pink-500 flex items-center justify-center text-white text-xs font-bold"
+                      >
+                        EL
+                      </div>
+                    </div>
+                    <span
+                      class="px-2 py-1 text-xs font-medium text-orange-700 bg-orange-50 rounded"
+                      >Angular</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Design 5: Dark Header with Info Cards -->
+              <div
+                class="bg-white rounded-2xl shadow-sm hover:shadow-lg border border-gray-200 transition-all duration-300 card-animate overflow-hidden group cursor-pointer"
+              >
+                <div
+                  class="bg-gray-900 px-5 py-4 flex items-center justify-between"
+                >
+                  <div class="flex items-center gap-3">
+                    <div
+                      class="w-10 h-10 bg-indigo-500 rounded-lg flex items-center justify-center"
+                    >
+                      <svg
+                        class="w-5 h-5 text-white"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <div>
+                      <h3
+                        class="text-base font-bold text-white group-hover:text-indigo-300 transition"
+                      >
+                        Chat Application
+                      </h3>
+                      <span class="text-xs text-gray-400 font-medium"
+                        >Node.js • 4h ago</span
+                      >
+                    </div>
+                  </div>
+                  <span
+                    class="px-2.5 py-1 text-xs font-bold text-green-400 bg-green-900 bg-opacity-50 rounded-lg border border-green-700"
+                    >ACTIVE</span
+                  >
+                </div>
+                <div class="p-5">
+                  <p class="text-sm text-gray-600 mb-4 leading-relaxed">
+                    Real-time messaging platform with end-to-end encryption,
+                    group chats, and media sharing capabilities.
+                  </p>
+                  <div class="grid grid-cols-2 gap-3 mb-4">
+                    <div
+                      class="p-3 bg-indigo-50 rounded-lg border border-indigo-100"
+                    >
+                      <div class="flex items-center gap-2 mb-1">
+                        <svg
+                          class="w-4 h-4 text-indigo-600"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                          ></path>
+                        </svg>
+                        <span class="text-xs font-semibold text-indigo-900"
+                          >Stars</span
+                        >
+                      </div>
+                      <div class="text-xl font-bold text-indigo-600">20</div>
+                    </div>
+                    <div
+                      class="p-3 bg-blue-50 rounded-lg border border-blue-100"
+                    >
+                      <div class="flex items-center gap-2 mb-1">
+                        <svg
+                          class="w-4 h-4 text-blue-600"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                          ></path>
+                        </svg>
+                        <span class="text-xs font-semibold text-blue-900"
+                          >Team</span
+                        >
+                      </div>
+                      <div class="text-xl font-bold text-blue-600">7</div>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="text-xs text-gray-500 font-medium">Team:</span>
+                    <div class="flex -space-x-2">
+                      <div
+                        class="w-8 h-8 rounded-full border-2 border-white bg-cyan-500 flex items-center justify-center text-white text-xs font-bold shadow"
+                      >
+                        JS
+                      </div>
+                      <div
+                        class="w-8 h-8 rounded-full border-2 border-white bg-lime-500 flex items-center justify-center text-white text-xs font-bold shadow"
+                      >
+                        NK
+                      </div>
+                      <div
+                        class="w-8 h-8 rounded-full border-2 border-white bg-amber-500 flex items-center justify-center text-white text-xs font-bold shadow"
+                      >
+                        PL
+                      </div>
+                      <div
+                        class="w-8 h-8 rounded-full border-2 border-white bg-gray-300 flex items-center justify-center text-gray-700 text-xs font-semibold shadow"
+                      >
+                        +4
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Design 6: Minimalist with Large Icon -->
+              <div
+                class="bg-white rounded-2xl shadow-sm hover:shadow-lg border border-gray-200 transition-all duration-300 card-animate overflow-hidden cursor-pointer group"
+              >
+                <div class="p-6">
+                  <div
+                    class="inline-flex p-3 bg-yellow-100 rounded-2xl mb-4 group-hover:scale-110 transition-transform"
+                  >
+                    <svg
+                      class="w-8 h-8 text-yellow-600"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div class="flex items-start justify-between mb-3">
+                    <h3
+                      class="text-xl font-bold text-gray-900 group-hover:text-yellow-600 transition"
+                    >
+                      Portfolio Website
+                    </h3>
+                    <button class="p-1 hover:bg-gray-100 rounded-lg transition">
+                      <svg
+                        class="w-5 h-5 text-gray-400"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z"
+                        ></path>
+                      </svg>
+                    </button>
+                  </div>
+                  <p class="text-sm text-gray-600 mb-4 leading-relaxed">
+                    Personal portfolio website showcasing projects, blog posts,
+                    and contact information with modern animations.
+                  </p>
+                  <div class="flex items-center gap-2 mb-5">
+                    <span
+                      class="px-3 py-1 text-xs font-bold text-gray-600 bg-gray-100 rounded-full"
+                      >ARCHIVED</span
+                    >
+                    <span
+                      class="px-3 py-1 text-xs font-bold text-yellow-700 bg-yellow-50 rounded-full"
+                      >Next.js</span
+                    >
+                  </div>
+                  <div
+                    class="flex items-center gap-6 pt-4 border-t border-gray-100"
+                  >
+                    <div>
+                      <div class="text-xs text-gray-500 mb-1">Stars</div>
+                      <div class="text-base font-bold text-gray-900">10</div>
+                    </div>
+                    <div>
+                      <div class="text-xs text-gray-500 mb-1">Commits</div>
+                      <div class="text-base font-bold text-gray-900">156</div>
+                    </div>
+                    <div class="ml-auto flex items-center gap-2">
+                      <div
+                        class="w-8 h-8 rounded-full bg-gray-400 flex items-center justify-center text-white text-xs font-bold"
+                      >
+                        BW
+                      </div>
+                      <span class="text-xs text-gray-500">2w ago</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200">
+      <div class="px-8 py-6 flex items-center justify-between">
+        <p class="text-sm text-gray-500">Made with ❤️ by Team CubePub</p>
+        <div class="flex items-center space-x-6">
+          <a href="#" class="text-sm text-gray-500 hover:text-gray-700">Home</a>
+          <a href="#" class="text-sm text-gray-500 hover:text-gray-700"
+            >Documentation</a
+          >
+          <a href="#" class="text-sm text-gray-500 hover:text-gray-700"
+            >Support</a
+          >
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const searchInput = document.querySelector('input[type="text"]')
+      searchInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          console.log('Search for:', e.target.value)
+        }
+      })
+
+      document.addEventListener('keydown', (e) => {
+        if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+          e.preventDefault()
+          searchInput.focus()
+        }
+      })
+    </script>
+  </body>
+</html>
